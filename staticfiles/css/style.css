@@ -1,0 +1,882 @@
+/* ============================================
+   OPAL MOVEMENT PLANNERS - COMPLETE CSS
+   ============================================ */
+
+/* Root Variables */
+:root {
+    --primary: #2c1810;
+    --secondary: #d4af37;
+    --accent: #f5e6d3;
+    --text: #333;
+    --white: #ffffff;
+    --light-bg: #faf8f5;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: var(--light-bg);
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 5%;
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+}
+
+.logo img {
+    display: block;
+    height: 55px;
+    width: auto;
+    max-width: 160px;
+    background: transparent;
+    background-color: transparent;
+    object-fit: contain;
+    border: none;
+}
+
+.logo span {
+    color: var(--secondary);
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--primary);
+    min-width: 180px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    padding: 12px 18px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.dropdown-content.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropbtn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font: inherit;
+    padding: 5px 15px 5px 10px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.dropbtn::after {
+    content: ' ▼';
+    font-size: 0.8rem;
+}
+
+/* Office Hours Badge */
+.office-hours {
+    color: var(--secondary);
+    font-weight: 600;
+    border: 2px solid var(--secondary);
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, rgba(44,24,16,0.85), rgba(44,24,16,0.7)), 
+                url('../images/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    background-image: url('../images/title-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tagline {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 45px;
+    background: var(--secondary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+    background: #e5c158;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.services h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.services h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    border-bottom-color: var(--secondary);
+}
+
+.service-card h3 {
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 30px;
+    background: var(--secondary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.view-btn:hover {
+    background: #e5c158;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================
+   EXPERIENCE BADGE SECTION
+   ============================================ */
+.experience {
+    padding: 5rem 5%;
+    text-align: center;
+    background: var(--primary);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+}
+
+.exp-badge {
+    position: relative;
+    z-index: 1;
+}
+
+.exp-badge h2 {
+    font-size: 6rem;
+    color: var(--secondary);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.exp-badge p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   VENDOR PAGES (Photographers, Decorators, Caterers)
+   ============================================ */
+.vendor-page {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vendor-page h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.page-desc {
+    text-align: center;
+    color: #777;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.vendor-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.vendor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.vendor-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.vendor-info {
+    padding: 1.8rem;
+}
+
+.vendor-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.vendor-info .exp-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.vendor-info p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.vendor-info .contact {
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   PACKAGES PAGE
+   ============================================ */
+.packages-page {
+    padding: 4rem 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.packages-page h1,
+.packages-page h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.packages-page h1 {
+    font-size: 2.5rem;
+}
+
+.packages-page h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.package-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th, td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: var(--primary);
+    color: var(--secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+td {
+    color: #555;
+}
+
+tr:hover {
+    background: #faf8f5;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.package-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--secondary);
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+.package-card h3 {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.package-card .price {
+    display: block;
+    margin-top: 1rem;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* ============================================
+   BOOKING PAGE
+   ============================================ */
+.booking-page {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.booking-page h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.booking-form p {
+    margin-bottom: 1.2rem;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--secondary);
+    color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #c9a030;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-page {
+    padding: 4rem 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-page h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-info-box,
+.map-box,
+.about-box {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-info-box h2,
+.map-box h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.contact-info-box p {
+    color: #666;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.owner-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--secondary);
+}
+
+.owner-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.owner-card .phone {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.primary-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.about-box {
+    background: linear-gradient(135deg, rgba(44,24,16,0.05), rgba(212,175,55,0.05));
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--secondary);
+}
+
+.about-box h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-stat {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.about-stat h3 {
+    color: var(--secondary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.about-stat p {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.about-text {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 4rem;
+}
+
+footer p:first-child {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .logo-img-wrapper img {
+        height: 55px;
+    }
+    
+    .logo span {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .exp-badge h2 {
+        font-size: 4rem;
+    }
+    
+    .office-hours {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+    
+    .vendor-grid,
+    .service-grid,
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .logo span {
+        display: none;  /* Mobile pe text hide */
+    }
+}
