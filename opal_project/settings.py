@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'main_app',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -142,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'your_cloud_name',
-    'API_KEY': 'your_api_key',
-    'API_SECRET': 'your_api_secret'
+    'CLOUD_NAME': 'dkwp6xkkd',
+    'API_KEY': '746681878469199',
+    'API_SECRET': 'N5m5y-OZEQyc6jHTlkiJZuT1RcI'
 }
