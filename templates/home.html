@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero" style="background-image: linear-gradient(135deg, rgba(44,24,16,0.85), rgba(44,24,16,0.7)), url('{% static 'images/home-bg.jpg' %}'); background-size: cover; background-position: center;">
+    <div class="hero-content">
+        <h1>Opal Movement Planners FSD</h1>
+        <p class="tagline">10+ Years of Creating Unforgettable Moments</p>
+        <p class="subtitle">Faisalabad's Premier Event Management Experts</p>
+        <a href="{% url 'booking' %}" class="cta-button">Book Your Event</a>
+    </div>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>📸 Photography</h3>
+            <p>Professional photographers capturing your special moments with expertise and creativity</p>
+            <a href="{% url 'photographers' %}" class="view-btn">View Partners</a>
+        </div>
+        <div class="service-card">
+            <h3>🎨 Decoration</h3>
+            <p>Expert decorators transforming your venue into a stunning celebration space</p>
+            <a href="{% url 'decorators' %}" class="view-btn">View Partners</a>
+        </div>
+        <div class="service-card">
+            <h3>🍽️ Catering</h3>
+            <p>Premium catering services delivering delicious cuisine for unforgettable feasts</p>
+            <a href="{% url 'caterers' %}" class="view-btn">View Partners</a>
+        </div>
+        <div class="service-card">
+            <h3>🎭 Event Management</h3>
+            <p>Complete event planning and coordination ensuring flawless execution of your vision</p>
+            <a href="{% url 'packages' %}" class="view-btn">View Packages</a>
+        </div>
+    </div>
+</section>
+
+<section class="experience">
+    <div class="exp-badge">
+        <h2>10+</h2>
+        <p>Years of Excellence in Faisalabad</p>
+    </div>
+</section>
+{% endblock %}

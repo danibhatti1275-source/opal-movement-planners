@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Opal Movement Planners FSD{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Opal Movement Planners">
+            <span>Opal Movement Planners</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Our Partners</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'photographers' %}">Photographers</a>
+                    <a href="{% url 'decorators' %}">Decorators</a>
+                    <a href="{% url 'caterers' %}">Catering</a>
+                </div>
+            </li>
+            <li><a href="{% url 'packages' %}">Packages</a></li>
+            <li><a href="{% url 'booking' %}">Book Now</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <div class="office-hours">
+            <span>🕘 9 AM - 9 PM</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Opal Movement Planners FSD | 10+ Years of Excellence</p>
+        <p>Strategic Partner: CODER SOCIETY</p>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

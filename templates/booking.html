@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="booking-page">
+    <h1>Book Your Event</h1>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    
+    <form method="post" class="booking-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-btn">Submit Booking Request</button>
+    </form>
+</section>
+{% endblock %}

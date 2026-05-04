@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Opal Movement Planners{% endblock %}
+
+{% block content %}
+<section class="contact-page">
+    <h1>Contact Opal Movement Planners</h1>
+    <p class="page-desc">Get in touch with us for your dream event</p>
+    
+    <div class="contact-container">
+        <div class="contact-info-box">
+            <h2>📍 Location</h2>
+            <p>Faisalabad, Pakistan</p>
+            
+            <h2>🕘 Office Hours</h2>
+            <p>9:00 AM - 9:00 PM</p>
+            <p>Monday - Sunday</p>
+            
+            <h2>📞 Contact Owners</h2>
+            {% for contact in contacts %}
+            <div class="owner-card">
+                <h3>{{ contact.owner_name }}</h3>
+                <p class="phone">{{ contact.phone }}</p>
+                {% if contact.is_primary %}
+                <span class="primary-badge">Primary Contact</span>
+                {% endif %}
+            </div>
+            {% empty %}
+            <p>Contact information coming soon!</p>
+            {% endfor %}
+        </div>
+
+        <div class="about-box">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-stat">
+                    <h3>10+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="about-stat">
+                    <h3>1000+</h3>
+                    <p>Events Completed</p>
+                </div>
+            </div>
+            <p class="about-text">
+                With over a decade of expertise in event management, Opal Movement Planners has successfully orchestrated more than 1000 unforgettable celebrations across Faisalabad. From intimate gatherings to grand ceremonies, we bring passion, creativity, and precision to every event. Our team of dedicated professionals works tirelessly to transform your vision into reality, ensuring every moment is perfect and memorable.
+            </p>
+            <p class="about-text">
+                We specialize in coordinating photography, decoration, catering, and complete event management for weddings, mehndi, barat, walima, and all special occasions. Trust us to make your celebration exceptional.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Catering Partners | Opal Movement Planners{% endblock %}
+
+{% block content %}
+<section class="vendor-page">
+    <h1>Catering Partners</h1>
+    <p class="page-desc">Delicious cuisine crafted by Faisalabad's finest caterers</p>
+    
+    <div class="vendor-grid">
+        {% for vendor in vendors %}
+        <div class="vendor-card">
+            <img src="{{ vendor.photo.url }}" alt="{{ vendor.name }}">
+            <div class="vendor-info">
+                <h3>{{ vendor.name }}</h3>
+                <span class="exp-badge">{{ vendor.experience }} Experience</span>
+                <p>{{ vendor.description }}</p>
+                {% if vendor.phone %}
+                <p class="contact">📞 {{ vendor.phone }}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p>No catering partners added yet. Check back soon!</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
